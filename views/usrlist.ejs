@@ -1,0 +1,53 @@
+<h1 class="mt-4">User List</h1>
+<p class="lead mt-4"><a href="/users/register">Create new</a></p>
+ <table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Department</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% userlst.forEach(function (u) 
+        {
+        %>
+            <tr>
+                <td><%= u.name %></td>
+                <td><%= u.username %></td>
+                <td><%= u.department %></td>
+                <td><a href="/users/edit_user/?id=<%= u.id %>" >Edit</a></td>
+                <td><a id="<%= u.id %>" class="delete_rec" href="#">Delete</a></td>
+            </tr>
+        </tbody>
+        <% 
+        }) 
+        %>
+        <tfoot>
+            <tr>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Department</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </tfoot>
+    </table>
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
+<script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>    
+<script>    
+$(document).ready(function()
+{
+	$('#example').DataTable();
+	$('.delete_rec').click(function(e)
+	{
+		e.preventDefault();
+		if(confirm("Are you sure ?"))
+		{
+			$(location).attr('href', '/users/delete_user/?id='+$(this).attr('id'));
+		}
+	});
+});
+</script>    

@@ -1,0 +1,66 @@
+>stock management
+>supplier ledger
+>supplier management
+>Client ledger
+>Client management
+>user management
+
+
+
+1st stage..
+
+>stock management
+diesel..petrol...lubricants
+purchase> date ..name of party..invoice/challan no. ..vehicle number...payment details ..
+
+>supplier ledger ...
+Supplier name..Indianoil ...xxx...yyy
+diesel..petrol...lubricants
+purchase> date ..name of party..invoice/challan no. ..vehicle number...payment details ..
+
+
+
+>supplier management
+Supplier name..Indianoil ...xxx...yyy
+diesel..petrol...lubricants
+purchase> date ..name of party..invoice/challan no. ..vehicle number...payment details ..
+..dues /update ..
+
+>Client ledger
+Sold items (diesel/petrol/lubricants)..
+date..name of client...items sold ..QTY..invoice no/challan no. ...vehicle no. ..payment details..status
+
+>Client management
+Sold items (diesel/petrol/lubricants)..
+date..name of client...items sold ..QTY..invoice no/challan no. ...vehicle no. ..payment details..status
+
+>user management (in house ...super admin...office staff/salesman
+
+
+http://customizedwebarts.com/newganga/
+customizedwebarts.com/newganga/alarm.html
+customizedwebarts.com/newganga/CashLessStatus.html
+customizedwebarts.com/newganga/cashless.html
+http://customizedwebarts.com/newganga/Creditlist.html
+http://customizedwebarts.com/newganga/DailySalesReport.html
+http://customizedwebarts.com/newganga/daily-record.html
+http://customizedwebarts.com/newganga/daily-report.html
+http://customizedwebarts.com/newganga/diesel.html
+http://customizedwebarts.com/newganga/Du-Status.html
+http://customizedwebarts.com/newganga/electricity-expenses.html
+http://customizedwebarts.com/newganga/food-expense.html
+http://customizedwebarts.com/newganga/lubricant.html
+http://customizedwebarts.com/newganga/new_customer_create.html
+http://customizedwebarts.com/newganga/paymentmanagment.html
+http://customizedwebarts.com/newganga/petrol.html
+http://customizedwebarts.com/newganga/ProductWiseReconciliationreport.html
+http://customizedwebarts.com/newganga/purchaselist.html
+http://customizedwebarts.com/newganga/purchase-report.html
+http://customizedwebarts.com/newganga/renewal-charges.html
+http://customizedwebarts.com/newganga/Report.html
+http://customizedwebarts.com/newganga/RoOperation.html
+http://customizedwebarts.com/newganga/sallary_managment.html
+http://customizedwebarts.com/newganga/Tanktruckentryrecipt.html
+
+http://customizedwebarts.com/newganga/Tank-Status.html
+http://customizedwebarts.com/newganga/tank-truk.html

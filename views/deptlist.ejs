@@ -1,0 +1,57 @@
+<h1 class="mt-4">User List</h1>
+<p class="lead mt-4"><a href="/departments/form/">Create new Department</a></p>
+ <table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% if(listdata.length > 0)
+        { %>
+	        <% listdata.forEach(function (item) 
+	        {
+	        %>
+	            <tr>
+	                <td><%= item.name %></td>
+	                <td><a href="/departments/form/?id=<%= item.id %>" >Edit</a></td>
+	                <td><a id="<%= item.id %>" class="delete_rec" href="#">Delete</a></td>
+	            </tr>
+	        </tbody>
+	        <% 
+	        })
+        }
+        else
+        {
+        %>
+        	<tr>
+                <td colspan="3"><span color:"red">Record not found</span></td>
+              </tr>
+        <%
+        } 
+        %>
+        <tfoot>
+            <tr>
+                <th>Name</th>
+                
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </tfoot>
+    </table>
+<script>    
+$(document).ready(function()
+{
+	//$('#example').DataTable();
+	$('.delete_rec').click(function(e)
+	{
+		e.preventDefault();
+		if(confirm("Are you sure ?"))
+		{
+			$(location).attr('href', '/departments/delete_object/?id='+$(this).attr('id'));
+		}
+	});
+});
+</script> 

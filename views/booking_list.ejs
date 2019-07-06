@@ -1,0 +1,137 @@
+<link href='http://localhost:5005/assets/fc/main_core.css' rel='stylesheet' />
+<link href='http://localhost:5005/assets/fc/main_daygrid.css' rel='stylesheet' />
+<script src='http://localhost:5005/assets/fc/main_core.js'></script>
+<script src='http://localhost:5005/assets/fc/main_interaction.js'></script>
+<script src='http://localhost:5005/assets/fc/main_daygrid.js'></script>
+
+<h2 class="mt-4">Booking List</h2>
+
+<p class="lead mt-4"><a href="/bookings/booking_frm/">Add Booking</a></p>
+
+<div class="btn-group-vertical">
+  <button type="button" class="btn btn-primary">List View</button>
+  <button type="button" class="btn btn-primary">Calendar View</button>
+</div>
+
+<div id='calendar'></div>
+
+<br/>
+
+
+ <table id="example" class="display" style="width:100%;display:none;">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% if(listdata.length > 0)
+        { %>
+	        <% listdata.forEach(function (item) 
+	        {
+	        %>
+	            <tr>
+	                <td><%= item.name %></td>
+	                <td><a href="/clients/form/?id=<%= item.id %>" >Edit</a></td>
+	                <td><a id="<%= item.id %>" class="delete_rec" href="#">Delete</a></td>
+	            </tr>
+	        </tbody>
+	        <% 
+	        })
+        }
+        else
+        {
+        %>
+        	<tr>
+                <td colspan="3"><span color:"red">Record not found</span></td>
+              </tr>
+        <%
+        } 
+        %>
+        <tfoot>
+            <tr>
+                <th>Name</th>
+                
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </tfoot>
+    </table>
+	
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() 
+{
+	var calendarEl = document.getElementById('calendar');
+    var calendar = new FullCalendar.Calendar(calendarEl, 
+	{
+		plugins: [ 'interaction', 'dayGrid' ],
+		defaultDate: '2019-06-12',
+		editable: true,
+		header: 
+		{
+			left: 'prevYear,prev,next,nextYear today',
+			center: 'title',
+			right: 'dayGridMonth,dayGridWeek,dayGridDay'
+		},
+		eventLimit: true, // allow "more" link when too many events
+		events: [
+        {
+			title: 'All Day Event',
+			start: '2019-06-01'
+        },
+        {
+			title: 'Long Event',
+			start: '2019-06-07',
+			end: '2019-06-10'
+        },
+        {
+			groupId: 999,
+			title: 'Repeating Event',
+			start: '2019-06-09T16:00:00'
+        },
+        {
+          groupId: 999,
+          title: 'Repeating Event',
+          start: '2019-06-16T16:00:00'
+        },
+        {
+          title: 'Conference',
+          start: '2019-06-11',
+          end: '2019-06-13'
+        },
+        {
+          title: 'Meeting',
+          start: '2019-06-12T10:30:00',
+          end: '2019-06-12T12:30:00'
+        },
+        {
+          title: 'Lunch',
+          start: '2019-06-12T12:00:00'
+        },
+        {
+          title: 'Meeting',
+          start: '2019-06-12T14:30:00'
+        },
+        {
+          title: 'Happy Hour',
+          start: '2019-06-12T17:30:00'
+        },
+        {
+          title: 'Dinner',
+          start: '2019-06-12T20:00:00'
+        },
+        {
+          title: 'Birthday Party',
+          start: '2019-06-13T07:00:00'
+        },
+        {
+          title: 'Click for Google',
+          url: 'http://google.com/',
+          start: '2019-06-28'
+        }]
+    });
+	calendar.render();
+});
+</script>

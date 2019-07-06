@@ -1,0 +1,68 @@
+<%= console.log(department.resources); %>
+
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+      <h1 class="text-center mb-3">
+        <i class="fas fa-user-plus"></i> <% if(department.id) { %>Edit <% }else{ %>Create <%}%> Department
+      </h1>
+      <% include ./partials/messages %>
+      
+      
+      
+      <% if(department.id) { %>
+      <form action="/departments/edit" method="POST">
+      <% }else{ %>
+      <form action="/departments/create" method="POST">
+      <%}%>
+      
+      
+      
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="name"
+            id="name"
+            name="name"      
+            class="form-control"
+            placeholder="Enter department Name"
+            <% if(department.id) { %>
+            value="<%= typeof name != 'undefined' ? name : department.name %>"
+            <% }else{ %>
+            value="<%= typeof name != 'undefined' ? name : department.name %>"
+            <%}%>
+          />
+        </div>
+        
+        
+        <div class="form-group green-border-focus">
+  		<label for="desc">Desc</label>
+  		<textarea 
+  			class="form-control" 
+  			id="desc"
+            name="desc" 
+            rows="3" 
+            placeholder="Enter Department desc"><% if(department.id) { %>
+            <%= typeof desc != 'undefined' ? desc : department.desc %>
+            <% }else{ %><%= typeof desc != 'undefined' ? name : department.desc %><%}%></textarea>
+		</div>
+		
+		<div class="form-group green-border-focus">
+  		<label for="resources">Resources</label>
+  			<% resource.forEach(function (r) {
+  			let t = department.resources.indexOf(r.name);
+  			//console.log(t); 
+  			%>
+  				<input type="checkbox" name="resources[]" value="<%= r.name%>" <%  if(t >= 0){ %> checked <%} else {%> <% } %> ><%= r.name%> <br>
+  			<% }); %>
+		</div>
+		
+        <button type="submit" class="btn btn-primary btn-block">
+        Enter
+        </button>
+        <input type="hidden" value="<%= department.id %>" name="id" />
+      </form>
+      
+    </div>
+  </div>
+</div>

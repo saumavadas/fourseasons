@@ -1,0 +1,10 @@
+db.users.insert(
+{
+  name: 'The Manager', 
+  username: 'manager',
+  department: 'manager',
+  password: "$2a$10$f0WY/HtQ4t3uQtI2O3/AluMJJ3itzE1Fr0937GlVYAvjdKUaI3DN2",
+  "date": new Date()
+})
+
+db.departments.insert({name:"manager", desc:"The manager department, can't be deleted", "date": new Date()})
